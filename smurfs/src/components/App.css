@@ -22,13 +22,9 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 form {
@@ -39,6 +35,14 @@ form {
 }
 
 .smurf {
-  border: 1px solid green;
-  margin: 30px;
+  width: 300px;
+  margin: 30px 0 30px 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-font {
+  font-size: 30px;
 }

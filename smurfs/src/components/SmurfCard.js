@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { getSmurf, addSmurf } from "../actions/action";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Card,
+  CardText,
+  CardTitle
+} from "reactstrap";
 import "./App.css";
 
 const SmurfCard = props => {
@@ -19,14 +28,17 @@ const SmurfCard = props => {
 
   return (
     <div className="smurf-card">
-      <h2>SmurfCard</h2>
       {props.loading && <div>Incoming Smurf...</div>}
       {props.smurfs &&
         props.smurfs.map(smurf => (
-          <div className="smurf" key={smurf.id}>
-            <h2>Name: {smurf.name}</h2>
-            <h2>Age: {smurf.age}</h2>
-            <h2>Height: {smurf.height}</h2>
+          <div className="container">
+            <div className="smurf" key={smurf.id}>
+              <Card body inverse color="primary" className="card-container">
+                <CardTitle className="title-font">Name:{smurf.name}</CardTitle>
+                <CardText>Age: {smurf.age}</CardText>
+                <CardText>Height: {smurf.height}</CardText>
+              </Card>
+            </div>
           </div>
         ))}
       <Button onClick={props.getSmurf} color="primary" size="lg">
@@ -67,7 +79,7 @@ const SmurfCard = props => {
             type="text"
           />
         </FormGroup>
-        <Button type="sumbit" color="info">
+        <Button type="sumbit" color="primary">
           Submit
         </Button>
       </Form>
