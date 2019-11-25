@@ -23,6 +23,22 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+form {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.smurf {
+  border: 1px solid green;
+  margin: 30px;
 }
