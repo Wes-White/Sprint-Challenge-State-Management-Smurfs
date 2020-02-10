@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { getSmurf, addSmurf } from "../actions/action";
+import { fetchSmurfs, addSmurf } from "../actions/index";
 import {
   Button,
   Form,
@@ -23,7 +23,7 @@ const SmurfCard = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.addSmurf(newSmurf);
-    props.getSmurf();
+    props.fetchSmurfs();
   };
 
   return (
@@ -41,7 +41,7 @@ const SmurfCard = props => {
             </div>
           </div>
         ))}
-      <Button onClick={props.getSmurf} color="primary" size="lg">
+      <Button onClick={props.fetchSmurfs} color="primary" size="lg">
         Get Smurfs
       </Button>
       <Form inline onSubmit={handleSubmit} className="mainForm">
@@ -93,4 +93,4 @@ const mapStateToProps = state => {
     loading: state.loading
   };
 };
-export default connect(mapStateToProps, { getSmurf, addSmurf })(SmurfCard);
+export default connect(mapStateToProps, { fetchSmurfs, addSmurf })(SmurfCard);
